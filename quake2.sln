@@ -5,6 +5,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ctf", "ctf\ctf.vcxproj", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "game", "game\game.vcxproj", "{C90373A3-4356-8E42-4978-3AB5CC06D2C3}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rogue", "rogue\rogue.vcxproj", "{88EA5F30-A86F-4268-A3FC-F93734BA4E7A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xatrix", "xatrix\xatrix.vcxproj", "{B5CD6BDA-3295-40AC-B342-1AA671E2B8C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -29,6 +33,22 @@ Global
 		{C90373A3-4356-8E42-4978-3AB5CC06D2C3}.Release|Win32.Build.0 = Release|Win32
 		{C90373A3-4356-8E42-4978-3AB5CC06D2C3}.Release|x64.ActiveCfg = Release|x64
 		{C90373A3-4356-8E42-4978-3AB5CC06D2C3}.Release|x64.Build.0 = Release|x64
+		{88EA5F30-A86F-4268-A3FC-F93734BA4E7A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{88EA5F30-A86F-4268-A3FC-F93734BA4E7A}.Debug|Win32.Build.0 = Debug|Win32
+		{88EA5F30-A86F-4268-A3FC-F93734BA4E7A}.Debug|x64.ActiveCfg = Debug|x64
+		{88EA5F30-A86F-4268-A3FC-F93734BA4E7A}.Debug|x64.Build.0 = Debug|x64
+		{88EA5F30-A86F-4268-A3FC-F93734BA4E7A}.Release|Win32.ActiveCfg = Release|Win32
+		{88EA5F30-A86F-4268-A3FC-F93734BA4E7A}.Release|Win32.Build.0 = Release|Win32
+		{88EA5F30-A86F-4268-A3FC-F93734BA4E7A}.Release|x64.ActiveCfg = Release|x64
+		{88EA5F30-A86F-4268-A3FC-F93734BA4E7A}.Release|x64.Build.0 = Release|x64
+		{B5CD6BDA-3295-40AC-B342-1AA671E2B8C1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B5CD6BDA-3295-40AC-B342-1AA671E2B8C1}.Debug|Win32.Build.0 = Debug|Win32
+		{B5CD6BDA-3295-40AC-B342-1AA671E2B8C1}.Debug|x64.ActiveCfg = Debug|x64
+		{B5CD6BDA-3295-40AC-B342-1AA671E2B8C1}.Debug|x64.Build.0 = Debug|x64
+		{B5CD6BDA-3295-40AC-B342-1AA671E2B8C1}.Release|Win32.ActiveCfg = Release|Win32
+		{B5CD6BDA-3295-40AC-B342-1AA671E2B8C1}.Release|Win32.Build.0 = Release|Win32
+		{B5CD6BDA-3295-40AC-B342-1AA671E2B8C1}.Release|x64.ActiveCfg = Release|x64
+		{B5CD6BDA-3295-40AC-B342-1AA671E2B8C1}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

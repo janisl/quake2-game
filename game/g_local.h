@@ -501,7 +501,7 @@ extern	int	meansOfDeath;
 
 extern	edict_t			*g_edicts;
 
-#if defined __x86_64__ || defined _M_X86_64
+#if defined __x86_64__ || defined _M_X64
 #define	FOFS(x) (int)(long long)&(((edict_t *)0)->x)
 #define	STOFS(x) (int)(long long)&(((spawn_temp_t *)0)->x)
 #define	LLOFS(x) (int)(long long)&(((level_locals_t *)0)->x)
