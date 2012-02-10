@@ -1,18 +1,3 @@
-if(${SIZEOF_VOID_PTR} MATCHES "^4$")
-	set(ARCH i386)
-else(${SIZEOF_VOID_PTR} MATCHES "^4$")
-	set(ARCH x86_64)
-endif(${SIZEOF_VOID_PTR} MATCHES "^4$")
-
-set(BASE_CFLAGS "")
-
-set(RELEASE_CFLAGS "${BASE_CFLAGS} -m486 -O6 -ffast-math -funroll-loops
-	-fomit-frame-pointer -fexpensive-optimizations -malign-loops=2
-	-malign-jumps=2 -malign-functions=2")
-
-set(DEBUG_CFLAGS "${BASE_CFLAGS} -g")
-set(LDFLAGS -ldl -lm)
-
 set(ROGUE_OBJS
 	dm_ball.c
 	dm_tag.c
