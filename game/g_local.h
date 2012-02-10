@@ -458,10 +458,6 @@ extern	spawn_temp_t	st;
 extern	int	sm_meat_index;
 extern	int	snd_fry;
 
-extern	int	jacket_armor_index;
-extern	int	combat_armor_index;
-extern	int	body_armor_index;
-
 
 // means of death
 #define MOD_UNKNOWN			0
@@ -505,10 +501,17 @@ extern	int	meansOfDeath;
 
 extern	edict_t			*g_edicts;
 
+#if defined __x86_64__ || defined _M_X86_64
+#define	FOFS(x) (int)(long long)&(((edict_t *)0)->x)
+#define	STOFS(x) (int)(long long)&(((spawn_temp_t *)0)->x)
+#define	LLOFS(x) (int)(long long)&(((level_locals_t *)0)->x)
+#define	CLOFS(x) (int)(long long)&(((gclient_t *)0)->x)
+#else
 #define	FOFS(x) (int)&(((edict_t *)0)->x)
 #define	STOFS(x) (int)&(((spawn_temp_t *)0)->x)
 #define	LLOFS(x) (int)&(((level_locals_t *)0)->x)
 #define	CLOFS(x) (int)&(((gclient_t *)0)->x)
+#endif
 
 #define random()	((rand () & 0x7fff) / ((float)0x7fff))
 #define crandom()	(2.0 * (random() - 0.5))
