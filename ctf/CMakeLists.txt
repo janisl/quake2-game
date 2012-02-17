@@ -1,4 +1,4 @@
-set(CTF_OBJS
+add_library(ctf SHARED
 	g_ai.c
 	g_chase.c
 	g_cmds.c
@@ -24,11 +24,6 @@ set(CTF_OBJS
 	p_trail.c
 	p_view.c
 	p_weapon.c
-	q_shared.c
-)
-
-add_library(ctf SHARED ${CTF_OBJS})
-set_target_properties(ctf PROPERTIES CLEAN_DIRECT_OUTPUT 1 OUTPUT_NAME "game${ARCH}")
-set_target_properties(ctf PROPERTIES PREFIX "")
-set_target_properties(ctf PROPERTIES COMPILE_FLAGS ${DEBUG_CFLAGS})
+	q_shared.c)
+set_target_properties(ctf PROPERTIES CLEAN_DIRECT_OUTPUT 1 OUTPUT_NAME "game${ARCH}" PREFIX "")
 target_link_libraries(ctf ${LDFLAGS})

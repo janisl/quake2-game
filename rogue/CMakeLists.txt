@@ -1,4 +1,4 @@
-set(ROGUE_OBJS
+add_library(q2rogue SHARED
 	dm_ball.c
 	dm_tag.c
 	g_ai.c
@@ -62,9 +62,5 @@ set(ROGUE_OBJS
 	p_weapon.c
 	q_shared.c
 )
-
-add_library(q2rogue SHARED ${ROGUE_OBJS})
-set_target_properties(q2rogue PROPERTIES CLEAN_DIRECT_OUTPUT 1 OUTPUT_NAME "game${ARCH}")
-set_target_properties(q2rogue PROPERTIES PREFIX "")
-set_target_properties(q2rogue PROPERTIES COMPILE_FLAGS ${DEBUG_CFLAGS})
+set_target_properties(q2rogue PROPERTIES CLEAN_DIRECT_OUTPUT 1 OUTPUT_NAME "game${ARCH}" PREFIX "")
 target_link_libraries(q2rogue ${LDFLAGS})

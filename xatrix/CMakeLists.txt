@@ -1,4 +1,4 @@
-set(XATRIX_OBJS
+add_library(q2xatrix SHARED
 	g_ai.c
 	g_chase.c
 	g_cmds.c
@@ -52,9 +52,5 @@ set(XATRIX_OBJS
 	p_weapon.c
 	q_shared.c
 )
-
-add_library(q2xatrix SHARED ${XATRIX_OBJS})
-set_target_properties(q2xatrix PROPERTIES CLEAN_DIRECT_OUTPUT 1 OUTPUT_NAME "game${ARCH}")
-set_target_properties(q2xatrix PROPERTIES PREFIX "")
-set_target_properties(q2xatrix PROPERTIES COMPILE_FLAGS ${DEBUG_CFLAGS})
+set_target_properties(q2xatrix PROPERTIES CLEAN_DIRECT_OUTPUT 1 OUTPUT_NAME "game${ARCH}" PREFIX "")
 target_link_libraries(q2xatrix ${LDFLAGS})

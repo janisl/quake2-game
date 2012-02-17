@@ -18,14 +18,11 @@ else(${SIZEOF_VOID_PTR} MATCHES "^4$")
 	set(ARCH x86_64)
 endif(${SIZEOF_VOID_PTR} MATCHES "^4$")
 
-set(BASE_CFLAGS "")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden")
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
+set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -m486 -O6 -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations -malign-loops=2 malign-jumps=2 -malign-functions=2")
 
-set(RELEASE_CFLAGS "${BASE_CFLAGS} -m486 -O6 -ffast-math -funroll-loops
-	-fomit-frame-pointer -fexpensive-optimizations -malign-loops=2
-	-malign-jumps=2 -malign-functions=2")
-
-set(DEBUG_CFLAGS "${BASE_CFLAGS} -g")
-set(LDFLAGS -ldl -lm)
+set(LDFLAGS dl m)
 
 add_subdirectory(baseq2)
 add_subdirectory(ctf)

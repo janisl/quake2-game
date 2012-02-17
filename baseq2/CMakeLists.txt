@@ -1,4 +1,4 @@
-set(GAME_OBJS
+add_library(q2game SHARED
 	g_ai.c
 	p_client.c
 	g_chase.c
@@ -48,9 +48,5 @@ set(GAME_OBJS
 	q_shared.c
 	m_flash.c
 )
-
-add_library(q2game SHARED ${GAME_OBJS})
-set_target_properties(q2game PROPERTIES CLEAN_DIRECT_OUTPUT 1 OUTPUT_NAME "game${ARCH}")
-set_target_properties(q2game PROPERTIES PREFIX "")
-set_target_properties(q2game PROPERTIES COMPILE_FLAGS ${DEBUG_CFLAGS})
+set_target_properties(q2game PROPERTIES CLEAN_DIRECT_OUTPUT 1 OUTPUT_NAME "game${ARCH}" PREFIX "")
 target_link_libraries(q2game ${LDFLAGS})
