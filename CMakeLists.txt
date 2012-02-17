@@ -12,15 +12,16 @@ endif(COMMAND cmake_policy)
 include(CheckTypeSize)
 check_type_size(void*  SIZEOF_VOID_PTR)
 
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden")
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
+set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O6 -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations -falign-loops=2 -falign-jumps=2 -falign-functions=2")
+
 if(${SIZEOF_VOID_PTR} MATCHES "^4$")
 	set(ARCH i386)
+	set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -m486")
 else(${SIZEOF_VOID_PTR} MATCHES "^4$")
 	set(ARCH x86_64)
 endif(${SIZEOF_VOID_PTR} MATCHES "^4$")
-
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden")
-set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
-set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -m486 -O6 -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations -malign-loops=2 malign-jumps=2 -malign-functions=2")
 
 set(LDFLAGS dl m)
 
